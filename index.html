@@ -1,15 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SheCodes Plus</title>
-    <link rel="stylesheet" href="style.css">
+  <title>SheCodes+ Weather Widget</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/5a5cc76058.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
+
 <body>
-  <h1>
-      Hello!
-  </h1> 
-  <script src="script.js"></script> 
+  <div id="bootstrap-container">
+    <div class="navigation-bar">
+      <input type="text" placeholder="Type city here" autofocus="on" class="form-control shadow-sm" id="city-input" />
+      <i class="fas fa-search"></i>
+      <input type="submit" class="btn btn-dark" id="search-button" value="Search" />
+      <button class="btn btn-link" id="current-location-button">
+        🚩
+      </button>
+    </div>
+    <div class="row" id="left-container">
+      <div class="current-city" class="col-4">
+        <h1 id="city">SAVANNAH, GA (US)</h1>
+        <h2>
+          <span id="defaultTemp">84°</span>
+          <span class="degreeLink">
+            <a href="#" id="fahrenheit-link">°F</a> /
+            <a href="#" id="celsius-link">°C</a>
+          </span>
+        </h2>
+        <h3 id="date-time">Thursday, August 27</h3>
+        <p>Precip: 10%<br />Humidity: <span id="humidity">63</span>%<br />Wind: <span id="wind">4</span>mph (6km/hr)</p>
+      </div>
+    </div>
+    <div id="right-container">
+      <div class="weatherDisplay">
+        <h1 class="emoji">
+          <i class="fas fa-sun"></i>
+        </h1>
+        <h3 id="description">Mostly Sunny</h3>
+      </div>
+    </div>
+    <div id="variable-results">
+      <div class="row" class="forecastTable">
+        <div class="col">
+          Friday
+          <br />
+          <i class="fas fa-bolt"></i>
+          <br />
+          92°/75°
+        </div>
+        <div class="col">
+          Saturday
+          <br />
+          <i class="fas fa-cloud-sun"> </i>
+          <br />
+          94°/76°
+        </div>
+        <div class="col">
+          Sunday<br />
+          <i class="fas fa-cloud-sun"> </i>
+          <br />
+          92°/75°
+        </div>
+        <div class="col">
+          Monday
+          <br />
+          <i class="fas fa-bolt"></i>
+          <br />
+          90°/74°
+        </div>
+        <div class="col">
+          Tuesday
+          <br />
+          <i class="fas fa-cloud"></i>
+          <br />
+          89°/73°
+        </div>
+        <div class="col">
+          Wednesday
+          <br />
+          <i class="fas fa-cloud-sun"> </i>
+          <br />
+          90°/75°
+        </div>
+      </div>
+      <p><em>predictions via accuweather.com</em></p>
+    </div>
+  </div>
+  <script src="src/script.js"></script>
 </body>
+
 </html>

@@ -1,4 +1,93 @@
+#bootstrap-container {
+  border: 2px solid rgb(53, 84, 119);
+  display: block;
+  margin: 0 auto;
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  width: 640px;
+  border-radius: 20px;
+  padding: 10px 30px 20px;
+}
+#left-container {
+  display: inline-block;
+  padding: 20px 20px 20px 20px;
+  width: 360px;
+}
+#right-container {
+  color: #fff;
+  float: right;
+  height: 237px;
+  margin: 4px;
+  padding: 40px 10px;
+  width: 200px;
+}
 h1 {
-  color: blue;
+  font-size: 28px;
+  margin: 0;
+}
+h2 {
+  font-size: 32px;
+  margin: 0;
+}
+h3 {
+  font-size: 24px;
+  margin: 0 0 10px 0;
+}
+p {
+  color: rgb(53, 84, 119);
+  font-family: "Josefin Sans", sans-serif;
+}
+button {
+  border-radius: 10px;
+  background: rgb(53, 84, 119);
+  color: #fff;
+}
+.navigation-bar {
+  border-radius: 40px;
+  display: block;
+  margin: 0 auto;
+  padding: 10px 10px 20px 10px;
+  text-align: center;
+}
+.form-control {
+  display: inline-block;
+  width: auto;
+}
+.current-city {
+  color: #fff;
+  font-family: "Josefin Sans", sans-serif;
+  margin: 0 auto;
+  padding: 0;
+}
+.city {
+  text-shadow: 1px 1px 2px #d1d1d1;
+}
+.defaultTemp {
+  color: #fff;
+}
+.degreeLink {
+  color: rgb(53, 84, 119);
+  font-size: 18px;
+}
+
+.emoji i {
+  color: orangered;
+  font-size: 120px;
+  padding: 0 0 20px 0;
+}
+.row {
+  margin: 10px 0;
+  padding: 10px;
+}
+.col {
+  background-image: linear-gradient(-225deg, #fffeff 0%, #d7fffe 100%);
+  border-radius: 10px;
+  color: rgb(53, 84, 119);
+  font-family: "Josefin Sans", sans-serif;
+  height: 120px;
+  margin: 6px 4px;
+  padding: 10px;
+  text-align: center;
+}
+.weatherDisplay {
   text-align: center;
 }
