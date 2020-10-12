@@ -20,6 +20,11 @@
   padding: 40px 10px;
   width: 200px;
 }
+#open-source-link {
+  display: block;
+  margin: 0 auto;
+  text-align: left;
+}
 h1 {
   font-size: 28px;
   margin: 0;
