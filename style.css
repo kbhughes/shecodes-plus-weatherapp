@@ -22,8 +22,9 @@
 }
 #open-source-link {
   display: block;
+  line-height: 2.5;
   margin: 0 auto;
-  text-align: left;
+  text-align: center;
   text-decoration: none;
 }
 h1 {
