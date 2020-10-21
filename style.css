@@ -77,13 +77,10 @@ button {
 .degreeLink {
   color: rgb(53, 84, 119);
   font-size: 18px;
+  position: relative;
+  top: -8px;
 }
 
-.emoji i {
-  color: orangered;
-  font-size: 120px;
-  padding: 0 0 20px 0;
-}
 .row {
   margin: 10px 0;
   padding: 10px;

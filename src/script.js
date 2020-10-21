@@ -61,6 +61,7 @@ function displayWeather(response) {
   let newData = `${newCity} (${newCountry})`;
   document.querySelector("#city").innerHTML = newData.toUpperCase();
   document.querySelector("#defaultTemp").innerHTML = Math.round(response.data.main.temp);
+  document.querySelector("#temp-feel").innerHTML = Math.round(response.data.main.feels_like);
   document.querySelector("#humidity").innerHTML = Math.round(response.data.main.humidity);
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
   document.querySelector("#description").innerHTML = response.data.weather[0].main;
@@ -85,6 +86,7 @@ function getCurrentLocation(event) {
 
 let submitCity = document.querySelector("#search-button");
 submitCity.addEventListener("click", handleSubmit);
+
 
 let currentLocation = document.querySelector("#current-location-button");
 currentLocation.addEventListener("click", getCurrentLocation);
