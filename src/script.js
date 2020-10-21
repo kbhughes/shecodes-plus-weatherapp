@@ -59,12 +59,14 @@ function displayWeather(response) {
   let newCity = response.data.name;
   let newCountry = response.data.sys.country;
   let newData = `${newCity} (${newCountry})`;
+  let newImage = document.querySelector("#icon");
   document.querySelector("#city").innerHTML = newData.toUpperCase();
   document.querySelector("#defaultTemp").innerHTML = Math.round(response.data.main.temp);
   document.querySelector("#temp-feel").innerHTML = Math.round(response.data.main.feels_like);
   document.querySelector("#humidity").innerHTML = Math.round(response.data.main.humidity);
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
   document.querySelector("#description").innerHTML = response.data.weather[0].main;
+  newImage.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
 
 function handleSubmit(event) {
