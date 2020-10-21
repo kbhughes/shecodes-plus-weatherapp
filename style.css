@@ -98,3 +98,12 @@ button {
 .weatherDisplay {
   text-align: center;
 }
+
+.degreeLink .active {
+  color: #fff;
+  cursor: default;
+}
+
+.degreeLink .active:hover {
+  text-decoration: none;
+}

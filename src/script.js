@@ -30,12 +30,16 @@ dateTime.innerHTML = `${currentDay} ${currentTime}`;
 
 function convertFahrenheit(event) {
   event.preventDefault();
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let temperatureElement = document.querySelector("#defaultTemp");
   temperatureElement.innerHTML = Math.round(fahrenheitTemp);
 }
 
 function convertCelsius(event) {
   event.preventDefault();
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
   let temperatureElement = document.querySelector("#defaultTemp");
   let celsiusConversion = (fahrenheitTemp - 32) * 5 / 9;
   temperatureElement.innerHTML = Math.round(celsiusConversion);
