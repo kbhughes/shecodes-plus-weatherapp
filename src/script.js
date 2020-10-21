@@ -28,23 +28,26 @@ dateTime.innerHTML = `${currentDay} ${currentTime}`;
 
 // Week 4 Bonus - Temperature Conversion
 
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", convertFahrenheit);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", convertCelsius);
-
 function convertFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#defaultTemp");
-  temperatureElement.innerHTML = 84;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
 }
 
 function convertCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#defaultTemp");
-  temperatureElement.innerHTML = 29;
+  let celsiusConversion = (fahrenheitTemp - 32) * 5 / 9;
+  temperatureElement.innerHTML = Math.round(celsiusConversion);
 }
+
+let fahrenheitTemp = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", convertFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", convertCelsius);
 
 // Week 5 Homework
 
@@ -60,6 +63,9 @@ function displayWeather(response) {
   let newCountry = response.data.sys.country;
   let newData = `${newCity} (${newCountry})`;
   let newImage = document.querySelector("#icon");
+
+  fahrenheitTemp = response.data.main.temp;
+
   document.querySelector("#city").innerHTML = newData.toUpperCase();
   document.querySelector("#defaultTemp").innerHTML = Math.round(response.data.main.temp);
   document.querySelector("#temp-feel").innerHTML = Math.round(response.data.main.feels_like);
