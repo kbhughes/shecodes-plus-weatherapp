@@ -23,7 +23,7 @@ let week = [
   "Saturday",
 ];
 let currentDay = week[now.getDay()];
-dateTime.innerHTML = `${currentDay}, ${currentTime}`;
+dateTime.innerHTML = `${currentDay}, updated ${currentTime}`;
 
 // Temperature Conversion
 
@@ -74,12 +74,9 @@ function displayForecast(response) {
           />
           <strong>${Math.round(forecast.main.temp_max)}°</strong> / ${Math.round(forecast.main.temp_min)}°
         </div>`;
-
-  console.log(response.data);
 }
 
 function displayWeather(response) {
-  console.log(response);
   let newCity = response.data.name;
   let newCountry = response.data.sys.country;
   let newData = `${newCity} (${newCountry})`;
@@ -120,4 +117,4 @@ submitCity.addEventListener("submit", handleSubmit);
 let currentLocation = document.querySelector("#current-location-button");
 currentLocation.addEventListener("click", getCurrentLocation);
 
-searchCity("New York");
+searchCity("Atlanta");
