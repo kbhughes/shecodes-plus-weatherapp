@@ -1,4 +1,3 @@
-// Week 4 Homework - Date & Time
 
 let dateTime = document.querySelector("#date-time");
 
@@ -24,9 +23,9 @@ let week = [
   "Saturday",
 ];
 let currentDay = week[now.getDay()];
-dateTime.innerHTML = `${currentDay} ${currentTime}`;
+dateTime.innerHTML = `${currentDay}, ${currentTime}`;
 
-// Week 4 Bonus - Temperature Conversion
+// Temperature Conversion
 
 function convertFahrenheit(event) {
   event.preventDefault();
@@ -53,12 +52,30 @@ fahrenheitLink.addEventListener("click", convertFahrenheit);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertCelsius);
 
-// Week 5 Homework
+// Realtime Data
 
 function searchCity(city) {
   let apiKey = `6a519c301ef89c219455ba379e04e37b`;  
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayWeather);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  let forecast = response.data.list[0];
+
+  forecastElement.innerHTML = `<div class="col-2">
+          <p>Friday</p>
+          <img 
+          src = "http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" 
+          />
+          <strong>${Math.round(forecast.main.temp_max)}°</strong> / ${Math.round(forecast.main.temp_min)}°
+        </div>`;
+
+  console.log(response.data);
 }
 
 function displayWeather(response) {
@@ -97,7 +114,7 @@ function getCurrentLocation(event) {
 }
 
 let submitCity = document.querySelector("#search-form");
-submitCity.addEventListener("click", handleSubmit);
+submitCity.addEventListener("submit", handleSubmit);
 
 
 let currentLocation = document.querySelector("#current-location-button");
