@@ -70,7 +70,7 @@ function displayForecast(response) {
   forecastElement.innerHTML = `<div class="col-2">
           <p>Friday</p>
           <img 
-          src = "http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" 
+          src = "https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" 
           />
           <strong>${Math.round(forecast.main.temp_max)}°</strong> / ${Math.round(forecast.main.temp_min)}°
         </div>`;
