@@ -90,7 +90,7 @@ button {
   border-radius: 10px;
   color: rgb(53, 84, 119);
   font-family: "Josefin Sans", sans-serif;
-  height: 120px;
+  height: 140px;
   margin: 6px 4px;
   padding: 10px;
   text-align: center;
@@ -108,4 +108,15 @@ button {
 .degreeLink .active:hover {
   cursor: default;
   text-decoration: none;
+}
+
+.forecast {
+  max-height: 72px;
+  max-width: 72px;
+  padding: 0;
+}
+
+.forecastHeader {
+  margin-bottom: 0;
+  padding: 0;
 }

@@ -68,8 +68,8 @@ function displayForecast(response) {
   let forecast = response.data.list[0];
 
   forecastElement.innerHTML = `<div class="col-2">
-          <p>Friday</p>
-          <img 
+          <p class="forecastHeader">Friday</p>
+          <img class="forecast"
           src = "https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" 
           />
           <strong>${Math.round(forecast.main.temp_max)}°</strong> / ${Math.round(forecast.main.temp_min)}°
@@ -90,7 +90,7 @@ function displayWeather(response) {
   document.querySelector("#humidity").innerHTML = Math.round(response.data.main.humidity);
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
   document.querySelector("#description").innerHTML = response.data.weather[0].main;
-  newImage.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  newImage.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
 
 function handleSubmit(event) {
