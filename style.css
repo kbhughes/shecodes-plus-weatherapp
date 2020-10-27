@@ -99,6 +99,15 @@ button {
   text-align: center;
 }
 
+.weatherDisplay #icon {
+  height: 150px;
+  width: 150px;
+}
+
+.weatherDisplay #description {
+  font-style: italic;
+}
+
 .degreeLink .active {
   color: #fff;
   cursor: default;
