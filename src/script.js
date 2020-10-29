@@ -1,6 +1,15 @@
-function formatDate(response) {
+function formatDate() {
 let dateTime = document.querySelector("#date-time");
 let now = new Date();
+
+let currentHour = now.getHours();
+if (currentHour < 10) {
+  currentHour = `0${currentHour}`;
+}
+let currentMinute = now.getMinutes();
+if (currentMinute < 10) {
+  currentMinute = `0${currentMinute}`;
+}
 
 let week = [
   "Sunday",
@@ -12,7 +21,7 @@ let week = [
   "Saturday",
 ];
 let currentDay = week[now.getDay()];
-dateTime.innerHTML = `${currentDay}, updated ${formatHours(response)}`;
+dateTime.innerHTML = `${currentDay}, updated ${currentHour}:${currentMinute}`;
 }
 
 // Temperature Conversion
@@ -54,7 +63,7 @@ function searchCity(city) {
 }
 
 function formatHours(timestamp) {
-let now = new Date();
+let now = new Date(timestamp);
 let currentHour = now.getHours();
 if (currentHour < 10) {
   currentHour = `0${currentHour}`;
@@ -101,7 +110,7 @@ function displayWeather(response) {
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
   document.querySelector("#description").innerHTML = response.data.weather[0].main;
   newImage.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-  formatDate(response);
+  formatDate();
 }
 
 function handleSubmit(event) {
