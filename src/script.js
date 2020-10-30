@@ -76,7 +76,6 @@ return `${currentHour}:${currentMinute}`;
 }
 
 function displayForecast(response) {
-  console.log(response);
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = null;
   let forecast = response.data.list[0];
@@ -123,6 +122,9 @@ function searchLocation(position) {
   let apiKey = `6a519c301ef89c219455ba379e04e37b`; 
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayWeather);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function getCurrentLocation(event) {
